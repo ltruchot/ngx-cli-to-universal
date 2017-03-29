@@ -8,6 +8,10 @@
   },
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "main.server.ts",
+    "main.browser.ts",
+    "express-engine.ts",
+    "app/app.server"
   ]
 }
