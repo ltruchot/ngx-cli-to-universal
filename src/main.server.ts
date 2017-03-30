@@ -23,7 +23,6 @@ app.get('*', (req, res) => {
   res.render('index', {req});
 });
 
-
 app.listen(8000, () => {
   console.log('listening...');
 });
