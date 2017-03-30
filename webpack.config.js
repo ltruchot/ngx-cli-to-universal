@@ -1,12 +1,17 @@
 const ngtools = require('@ngtools/webpack');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+	context: path.join(__dirname, 'src'),
 	entry: {
-		main: './src/main.server.ts'
+		main: './main.server.ts'
+	},
+	node: {
+	  __dirname: false
 	},
 	resolve: {
-		extensions: ['.ts', '.js', '.html', '.css']
+		extensions: ['.ts', '.js', '.html']
 	},
 	target: 'node',
 	output: {
@@ -16,25 +21,22 @@ module.exports = {
 	plugins: [
 		new ngtools.AotPlugin({
 			tsConfigPath: './tsconfig-universal.json'
-		})
+		}),
+		new CopyWebpackPlugin([
+      { from: 'assets', to: 'assets' }
+    ])
 	],
 	module: {
-		rules: [
-			{
-				test: /\.ts$/,
-				loader: '@ngtools/webpack'
-			},
-			{
-				test: /\.html$/,
-				loader: 'html-loader',
-				options: {
-					 caseSensitive: true
-				}
-			},
-			{
-				test: /\.css$/,
-				use: [ 'style-loader', 'css-loader' ]
+		rules: [{
+			test: /\.ts$/,
+			loader: '@ngtools/webpack'
+		},
+		{
+			test: /\.html$/,
+			loader: 'html-loader',
+			options: {
+				 caseSensitive: true
 			}
-		]
+		}]
 	}
 };

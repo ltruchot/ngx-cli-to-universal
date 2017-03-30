@@ -16,6 +16,11 @@
 	"include": [
 		"src/**/*"
 	],
+	"exclude": [
+		"main.ts",
+		"test.ts",
+    "**/*.spec.ts"
+	],
 	"angularCompilerOptions": {
 		"genDir": "src/ngfactory",
 		"entryModule": "./src/app/app.module#AppModule"

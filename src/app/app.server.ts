@@ -4,11 +4,14 @@ import { AppModule} from './app.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
+import { ArticlesModule } from './articles/articles.module';
+
 @NgModule({
   imports: [
     ServerModule,
     FormsModule,
-    AppModule
+    AppModule,
+    ArticlesModule
   ],
   bootstrap: [
     AppComponent
