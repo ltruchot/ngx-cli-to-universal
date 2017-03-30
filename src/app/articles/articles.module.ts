@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common'; // needed for ngIf, ngFor, etc.
+import { Routes, Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { ArticleListComponent, ArticleItemComponent } from './index';
 import { ArticlesService } from './articles.service';
 
 @NgModule({
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   exports: [
     ArticleListComponent,
     ArticleItemComponent

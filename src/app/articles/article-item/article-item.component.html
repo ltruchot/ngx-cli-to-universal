@@ -2,3 +2,7 @@
   Article item works!<br />
   <a [routerLink]="['/']">Back to articles list</a>
 </p>
+<div>
+	<h1>{{ viewData?.article?.title }}</h1>
+	<div>{{ viewData?.article?.body }}</div>
+</div>

@@ -5,7 +5,7 @@ const routes: Routes = [{
   path: '',
   component: ArticleListComponent
 }, {
-  path: 'article/:year/:month/:day/:title',
+  path: 'article/:id',
   component: ArticleItemComponent
 }];
 
