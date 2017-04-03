@@ -8,4 +8,4 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app 
 
 ## Universal server
 
-Run `npm run start-universal` for a dev re-render server with the same app
+Run `npm run start-universal` for a dev re-render server with the same app. Navigate to `http://localhost:8000/`.
