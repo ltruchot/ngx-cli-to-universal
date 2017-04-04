@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 // custom modules
 import { routing } from './app.routing';
 import { ArticlesModule } from './articles/articles.module';
+import { LoginModule } from './login/login.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     routing,
     RouterModule,
-    ArticlesModule
+    ArticlesModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

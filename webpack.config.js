@@ -2,6 +2,24 @@ const ngtools = require('@ngtools/webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
+// workaround https://github.com/angular/angular-cli/issues/5329
+var aotPlugin = new ngtools.AotPlugin({
+	tsConfigPath: './tsconfig-universal.json'
+});
+aotPlugin._compilerHost._resolve = function(path_to_resolve) {
+    path_1 = require("path");
+    path_to_resolve = aotPlugin._compilerHost._normalizePath(path_to_resolve);
+    if (path_to_resolve[0] == '.') {
+        return aotPlugin._compilerHost._normalizePath(path_1.join(aotPlugin._compilerHost.getCurrentDirectory(), path_to_resolve));
+    }
+    else if (path_to_resolve[0] == '/' || path_to_resolve.match(/^\w:\//)) {
+        return path_to_resolve;
+    }
+    else {
+        return aotPlugin._compilerHost._normalizePath(path_1.join(aotPlugin._compilerHost._basePath, path_to_resolve));
+    }
+};
+
 module.exports = {
 	context: path.join(__dirname, 'src'),
 	entry: {
@@ -19,9 +37,7 @@ module.exports = {
 		filename: '[name].js'
 	},
 	plugins: [
-		new ngtools.AotPlugin({
-			tsConfigPath: './tsconfig-universal.json'
-		}),
+		aotPlugin,
 		new CopyWebpackPlugin([
       { from: 'assets', to: 'assets' }
     ])
@@ -40,3 +56,4 @@ module.exports = {
 		}]
 	}
 };
+

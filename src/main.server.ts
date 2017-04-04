@@ -29,6 +29,9 @@ app.get('/', (req, res) => {
 app.get('/article/*', (req, res) => {
   res.render('index', {req});
 });
+app.get('/login', (req, res) => {
+  res.render('index', {req});
+});
 
 app.listen(8000, () => {
   console.log('listening on port 8000...');
