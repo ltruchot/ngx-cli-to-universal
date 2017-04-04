@@ -17,6 +17,7 @@ app.engine('html', ngExpressEngine({
   baseUrl: 'http://localhost:4200',
   bootstrap: [AppServerModuleNgFactory]
 }));
+app.set('port', 8000);
 app.set('view engine', 'html');
 app.set('views', 'src');
 
@@ -27,6 +28,9 @@ app.use('/assets', express.static(__dirname + '/assets'));
 app.get('/', (req, res) => {
   res.render('index', {req});
 });
+app.get('/articles', (req, res) => {
+  res.render('index', {req});
+});
 app.get('/article/*', (req, res) => {
   res.render('index', {req});
 });
@@ -34,6 +38,6 @@ app.get('/login', (req, res) => {
   res.render('index', {req});
 });
 
-app.listen(8000, () => {
-  console.log('listening on port 8000...');
+app.listen(app.get('port'), () => {
+  console.log(`listening on port ${ app.get('port') }...`);
 });

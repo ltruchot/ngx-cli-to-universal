@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'app works!';
-
+  modelExample: string;
   constructor (private router: Router) { }
 
   ngOnInit () {

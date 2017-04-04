@@ -1,6 +1,3 @@
-<p>
-  Article list works!
-</p>
 <ul *ngFor="let post of viewData.articles">
 	<li><a [routerLink]="['/article/' + post.id]">{{post.title}}</a></li>
 </ul>

@@ -3,7 +3,7 @@ import { ArticleListComponent, ArticleItemComponent } from './articles/index';
 import { LoginComponent } from './login/index';
 
 const routes: Routes = [{
-  path: '',
+  path: 'articles',
   component: ArticleListComponent
 }, {
   path: 'article/:id',

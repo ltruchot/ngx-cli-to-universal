@@ -1,6 +1,18 @@
-<h1>
-  {{title}}
-</h1>
-<app-login></app-login>
-<h2>Router view:</h2>
-<router-outlet></router-outlet>
+<h1>{{title}}</h1>
+
+<div>
+	<h2>Double binding exemple:</h2>
+	<input name="binding" [(ngModel)]="modelExample" type="text"> Text in input: {{ modelExample }}
+</div>
+
+<div>
+	<h2>Router outlet exemple:</h2>
+	<ul>
+		<li><a [routerLink]="['/login']">Login example</a></li>
+		<li><a [routerLink]="['/articles']">Articles list</a></li>
+		<li><a [routerLink]="['/']">Home</a></li>
+	</ul>
+	<hr />
+	<router-outlet></router-outlet>
+	<hr />
+</div>
