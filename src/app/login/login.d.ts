@@ -1,4 +1,4 @@
 export interface User {
-    name: string;
-    password: string;
+    name: string,
+    connected: boolean;
 }

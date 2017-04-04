@@ -10,18 +10,28 @@ import { User } from './login.d';
   providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
-  user: User = {name: '', password: ''};
+  user: User = {name: '', connected: false};
+  password: string;
+  message: string;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) {
+    this.user = this.loginService.user;
+  }
 
   ngOnInit() {
   }
 
   login () {
-    if (this.user.name === 'username' && this.user.password === '123') {
+    if (this.user.name === 'username' && this.password === '123') {
       this.loginService.login(this.user);
+      this.message = '';
     } else {
-      console.log('not');
+      this.message = 'Not connected.';
     }
+  }
+
+  logout () {
+    console.log('logout');
+    this.loginService.logout();
   }
 }
