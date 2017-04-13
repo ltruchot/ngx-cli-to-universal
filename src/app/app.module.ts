@@ -16,10 +16,12 @@ import { LoginModule } from './login/login.module';
 
 // components
 import { AppComponent } from './app.component';
+import { MomentComponent } from './moment/moment.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MomentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({

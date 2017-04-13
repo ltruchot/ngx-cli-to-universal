@@ -37,6 +37,9 @@ app.get('/article/*', (req, res) => {
 app.get('/login', (req, res) => {
   res.render('index', {req});
 });
+app.get('/moment', (req, res) => {
+  res.render('index', {req});
+});
 
 app.listen(app.get('port'), () => {
   console.log(`listening on port ${ app.get('port') }...`);
