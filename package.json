@@ -14,7 +14,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start-universal": "npm run build-universal && npm run sass-universal && npm run serve-universal",
-    "build-universal": "webpack -p",
+    "build-universal": "webpack",
     "serve-universal": "node dist-universal/main.js",
     "sass-universal": "node-sass src/styles.scss dist-universal/assets/styles.css --output-style compressed -q"
   },
@@ -34,6 +34,7 @@
     "angular-2-local-storage": "^1.0.1",
     "core-js": "^2.4.1",
     "moment": "2.17.1",
+    "ng2-toastr": "4.0.1",
     "q": "1.4.1",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.1.0",
