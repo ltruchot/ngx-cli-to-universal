@@ -1,3 +1,5 @@
-<ul *ngFor="let post of viewData.articles">
-	<li><a [routerLink]="['/article/' + post.id]">{{post.title}}</a></li>
-</ul>
+<!--<perfect-scrollbar style="height: 500px;">-->
+	<ul *ngFor="let post of viewData.articles">
+		<li><a [routerLink]="['/article/' + post.id]">{{post.title}}</a></li>
+	</ul>
+<!--</perfect-scrollbar>-->
